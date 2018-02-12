@@ -44,7 +44,7 @@ function draw() {
   ellipse(mouseX,mouseY,10)
   
   // we should probably remove the text
-  text('click here,\nthen press A\n to play', width / 2, 40);
+  text('click here,\nthen press A, S,\n D, or F to play', width / 2, 40);
   
   // pressing the mouse while playing creates bubbles
   if (playing) {

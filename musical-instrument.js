@@ -71,7 +71,18 @@ function draw() {
 function keyPressed() {
   if (keyIsPressed){
     print("got key press for ", key);
-    freq = mouseX+mouseY+100;
+    if (key == 'A') {
+      freq = mouseX + mouseY + 174;
+    }
+    if (key == 'S') {
+     freq = mouseX + mouseY+196;
+    }
+    if (key == 'D') {
+      freq = mouseX + mouseY+220;
+    }
+    if (key == 'F') {
+      freq = mouseX + mouseY+246;
+    }
     osc.freq(freq);
     osc.amp(0.5, 0.1);
     playing = true;

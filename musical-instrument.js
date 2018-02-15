@@ -16,6 +16,7 @@ var playingD = false;
 var playingF = false;
 
 function setup() {
+  createCancas(400, 400)
   backgroundColor = color(255, 0, 255);
   textAlign(CENTER);
   freq = random(100,300);
@@ -46,7 +47,7 @@ function draw() {
   background(255,255,255);
   ellipse(mouseX,mouseY,10)
   
-  text('click here,\nthen press keys\n and move mouse \nto play', width / 2, 30);
+  text('click here,\nthen press keys\n and move mouse \nto play', width / 2, 200);
   text('Low',15, 10);
   text('High',width-15, height-5);
   

@@ -16,7 +16,7 @@ var playingD = false;
 var playingF = false;
 
 function setup() {
-  createCancas(400, 400)
+  createCanvas(400, 400)
   backgroundColor = color(255, 0, 255);
   textAlign(CENTER);
   freq = random(100,300);

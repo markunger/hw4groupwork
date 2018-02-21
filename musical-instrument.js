@@ -46,7 +46,34 @@ function draw() {
   }
   background(255,255,255);
   ellipse(mouseX,mouseY,10)
-  
+	
+  push();
+	stroke(1);
+	strokeWeight(2);
+	line(0,20,20,0);
+	strokeWeight(1);
+	line(0,46,46,0);
+	line(0,62,62,0);
+	line(0,94,94,0);
+	line(0,130,130,0);
+	line(0,149,149,0);
+	line(0,192,192,0);
+	strokeWeight(2);
+	line(0,240,240,0);
+	strokeWeight(1);
+	line(0,294,294,0);
+	line(0,323,323,0);
+	line(0,387,387,0);
+	line(0,459,459,0);
+	line(0,498,498,0);
+	line(0,584,584,0);
+	strokeWeight(2);
+	line(0,680,680,0);
+	strokeWeight(1);
+	
+	pop();
+	
+	
   text('click here,\nthen press keys\n and move mouse \nto play', width / 2, 200);
   text('Low',15, 10);
   text('High',width-15, height-5);
@@ -59,7 +86,7 @@ function draw() {
       background(120, 0, 120);
   		ellipse(xPos, yPos, diameter);
     	xPos = xPos+random(-1,1);
-    	yPos = yPos-2;
+    	yPos = yPos-4;
     	print(yPos)
   		osc.amp(0.5,0.1);
    		diameter = diameter+1;
@@ -72,21 +99,37 @@ function draw() {
   }
    if (playingA) {
     background(0, 0, 255, 25);
+		push();
+		stroke(255);
+		line(0,20,20,0);
+		pop();
     fill(random(100, 255), 100, 100);
     ellipse(random(width), random(height), 10);
    }
    else if (playingS) {
     background(0, 255, 0, 25);
+		 push();
+		stroke(255);
+		line(0,20,20,0);
+		pop();
     fill(100, random(50, 255), 100);
     ellipse(random(width), random(height), 10);
    }
   else if (playingD) {
     background(255, 0, 0, 25);
+		push();
+		stroke(255);
+		line(0,20,20,0);
+		pop();
     fill(10, random(100, 250), 255);
     ellipse(random(width), random(height), 10);
    }
   else if (playingF) {
     background(10, 255, 200, 25);
+		push();
+		stroke(255);
+		line(0,20,20,0);
+		pop();
     fill(random(1,100), 100, 100);
     ellipse(random(width), random(height), 10);
    }
@@ -110,19 +153,19 @@ function keyPressed() {
     }
 
     if (key == 'A') {
-      freq = mouseX + mouseY + 174;
+      freq = (mouseX + mouseY+200)/2;
       playingA = true;
     }
     if (key == 'S') {
-     freq = mouseX + mouseY+196;
+     freq = (mouseX + mouseY+200);
       playingS = true;
     }
     if (key == 'D') {
-      freq = mouseX + mouseY+220;
+      freq = (mouseX + mouseY+200)*2;
       playingD = true;
     }
     if (key == 'F') {
-      freq = mouseX + mouseY+246;
+      freq = (mouseX + mouseY+200)*4;
       playingF = true;
     }
     osc.freq(freq);

@@ -119,13 +119,13 @@ function draw() {
    }
 }
 
-// THIS IS THE SECTION THAT TRYS TO CHANGE THE FREQUENCY
+//THIS IS THE SECTION THAT TRYS TO CHANGE THE FREQUENCY
 //frequency changes as the mouse moves
-//function mouseMoved() {
-//  freqCalc = (mouseX + mouseY + 200)
-//  osc.freq(freq);
-//  playing = true;
-//}
+function mouseMoved() {
+ freq = (mouseX + mouseY + 200)
+ osc.freq(freq);
+ playing = true;
+}
 
 //Changed this so that the frequency is based on the location of the mouse
 function keyPressed() {

@@ -99,65 +99,57 @@ function draw() {
   }
    if (playingA) {
     background(0, 0, 255, 25);
-		push();
-		stroke(255);
-		line(0,20,20,0);
-		pop();
     fill(random(100, 255), 100, 100);
     ellipse(random(width), random(height), 10);
    }
    else if (playingS) {
     background(0, 255, 0, 25);
-		 push();
-		stroke(255);
-		line(0,20,20,0);
-		pop();
     fill(100, random(50, 255), 100);
     ellipse(random(width), random(height), 10);
    }
   else if (playingD) {
     background(255, 0, 0, 25);
-		push();
-		stroke(255);
-		line(0,20,20,0);
-		pop();
     fill(10, random(100, 250), 255);
     ellipse(random(width), random(height), 10);
    }
   else if (playingF) {
     background(10, 255, 200, 25);
-		push();
-		stroke(255);
-		line(0,20,20,0);
-		pop();
     fill(random(1,100), 100, 100);
     ellipse(random(width), random(height), 10);
    }
 }
 
+// THIS IS THE SECTION THAT TRYS TO CHANGE THE FREQUENCY
 //frequency changes as the mouse moves
-function mouseMoved() {
-  freq = (mouseX + mouseY + 200)/4
-  osc.freq(freq);
-  osc.amp(0.5, 0.1);
-  playing = true;
-}
+//function mouseMoved() {
+//  freqCalc = (mouseX + mouseY + 200)
+//  osc.freq(freq);
+//  playing = true;
+//}
 
 //Changed this so that the frequency is based on the location of the mouse
 function keyPressed() {
   if (keyIsPressed){
     print("got key press for ", key);
     if (key == 'W') {
+			freq = (mouseX + mouseY + 200)/2;
       osc.setType('square');
+			playingA = true;
     }
     else if (key == 'Q') {
+			freq = (mouseX + mouseY + 200)/2;
       osc.setType('sine');
+			playingA = true;
     }
     else if (key == 'E') {
+			freq = (mouseX + mouseY + 200)/2;
       osc.setType('saw');
+			playingA = true;
     }
     else if (key == 'R') {
+			freq = (mouseX + mouseY + 200)/2;
       osc.setType('triangle');
+			playingA = true;
     }
 
     if (key == 'A') {
@@ -187,19 +179,31 @@ function keyReleased() {
   print("got key release for ", key);
   if (key == 'A') {
     osc.amp(0.0, 0.5);
-   // playing = false;
     playingA = false;
   } else if (key == 'S') {
     osc.amp(0.0, 0.5);
-  //  playing = false;
     playingS = false;
   } else if (key == 'D') {
     osc.amp(0.0, 0.5);
-  //  playing = false;
     playingD = false;
   } else if (key == 'F') {
     osc.amp(0.0, 0.5);
-  //  playing = false;
     playingF = false;
+  }
+	else if (key == 'W') {
+		osc.amp(0.0, 0.5);
+    playingA = false;
+  }
+  else if (key == 'Q') {
+		osc.amp(0.0, 0.5);
+    playingA = false;
+  }
+  else if (key == 'E') {
+		osc.amp(0.0, 0.5);
+    playingA = false;
+  }
+  else if (key == 'R') {
+		osc.amp(0.0, 0.5);
+    playingA = false;
   }
 }

@@ -135,6 +135,14 @@ function draw() {
    }
 }
 
+//frequency changes as the mouse moves
+function mouseMoved() {
+  freq = (mouseX + mouseY + 200)/4
+  osc.freq(freq);
+  osc.amp(0.5, 0.1);
+  playing = true;
+}
+
 //Changed this so that the frequency is based on the location of the mouse
 function keyPressed() {
   if (keyIsPressed){
@@ -153,24 +161,25 @@ function keyPressed() {
     }
 
     if (key == 'A') {
-      freq = (mouseX + mouseY+200)/2;
+      freq = (mouseX + mouseY + 200)/2;
       playingA = true;
     }
     if (key == 'S') {
-     freq = (mouseX + mouseY+200);
+     freq = (mouseX + mouseY + 200);
       playingS = true;
     }
     if (key == 'D') {
-      freq = (mouseX + mouseY+200)*2;
+      freq = (mouseX + mouseY + 200) * 2;
       playingD = true;
     }
     if (key == 'F') {
-      freq = (mouseX + mouseY+200)*4;
+      freq = (mouseX + mouseY + 200) * 4;
       playingF = true;
     }
     osc.freq(freq);
     osc.amp(0.5, 0.1);
     playing = true;
+    
   }
 }
 
@@ -178,19 +187,19 @@ function keyReleased() {
   print("got key release for ", key);
   if (key == 'A') {
     osc.amp(0.0, 0.5);
-    playing = false;
+   // playing = false;
     playingA = false;
   } else if (key == 'S') {
     osc.amp(0.0, 0.5);
-    playing = false;
+  //  playing = false;
     playingS = false;
   } else if (key == 'D') {
     osc.amp(0.0, 0.5);
-    playing = false;
+  //  playing = false;
     playingD = false;
   } else if (key == 'F') {
     osc.amp(0.0, 0.5);
-    playing = false;
+  //  playing = false;
     playingF = false;
   }
 }
